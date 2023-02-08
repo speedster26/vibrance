@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Navbar'
+import Navbar from '../Navbar/Navbar'
 import teamBanner from '../../assets/images/team.png'
 import Body from './Body'
 

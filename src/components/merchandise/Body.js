@@ -35,6 +35,7 @@ const Body = () => {
       backgroundColor: '#D7FDFF',
       color: '#343D4C',
       minWidth: '180px',
+      fontFamily: 'fredoka'
       
     }),
     option: (base, state) => ({
@@ -47,7 +48,8 @@ const Body = () => {
       '&:active': {
         backgroundColor: '#343D4C',
         color: '#343D4C'
-      }
+      },
+      fontFamily: 'fredoka'
     }),
     menuList: (base) => ({
       ...base,
@@ -55,11 +57,13 @@ const Body = () => {
     }),
     singleValue: (base) => ({
       ...base,
-      color: '#343D4C'
+      color: '#343D4C',
+      font: 'fredoka'
     }),
     placeholder: (base) => ({
       ...base,
-      color: '#343D4C'
+      color: '#343D4C',
+      font: 'fredoka'
     }),
     indicatorSeparator: (base) => ({
       ...base,
@@ -93,7 +97,7 @@ const Body = () => {
     <div className='flex flex-col space-y-10'>
       {/* filter */}
       <div className='filters flex md:flex-row flex-col-reverse justify-center md:justify-evenly items-center py-5 md:h-24 md:space-x-52 md:space-y-0 mx-3'>
-        <div className='flex md:space-x-10 space-x-5 mt-5'>
+        <div className='flex md:space-x-10 space-x-5 mt-5 flex-wrap'>
           <Select styles={customStyles} placeholder="Size" options={optionsSize}/>
           <Select styles={customStyles} placeholder="Combo" options={optionsCombo}/>
         </div>
