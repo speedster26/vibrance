@@ -9,7 +9,7 @@ const Header = () => {
       <div className='flex flex-col bg-[#D7FDFF] min-h-screen px-2 pb-10 md:space-y-10 space-y-5'>
       {/* Navbar component */}
         <Navbar/>
-        <motion.div initial={{opacity:0,scale:0.5}} animate={{opacity:1,scale:1}} transition={{duration:0.5}} className='flex justify-center mx-3 md:mx-16'>
+        <motion.div initial={{opacity:0,scale:0.5}} animate={{opacity:1,scale:1}} transition={{duration:0.5}} className='flex justify-center w-11/12 mx-auto'>
           <img src={merchBanner} alt="merch" />
         </motion.div>
         <Body/>

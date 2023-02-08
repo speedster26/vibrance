@@ -21,6 +21,11 @@ module.exports = {
         '2xl': '1px 1px 5px rgb(33 34 43 / 20%)',
         '3xl': '0 0 3px rgba(0, 0, 0, .8), 0 0 5px rgba(0, 0, 0, .9)',
       },
+      screens: {
+        'mdlg1': {'min': '425px', 'max': '590px'},
+        'mdlg2': {'min': '590px', 'max': '686px'},
+        'mdlg3': {'min': '686px', 'max': '767px'}
+      },
     },
   },
   plugins: [

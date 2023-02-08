@@ -36,10 +36,17 @@ const Body = () => {
       color: '#343D4C',
       fontFamily: 'fredoka',
       '@media (max-width: 375px)': {
-        padding: '6px 8px',
-        fontSize: '12px'
+        padding: '3px 8px',
+        fontSize: '12px',
       },
-      innerHeight: '100%'
+      '@media (max-width: 200px)': {
+        display: 'none'
+      },
+      innerHeight: '100%',
+      '&:focus': {
+        backgroundColor: '#fff',
+        color: '#343D4C'
+      }
       
     }),
     option: (base, state) => ({
@@ -105,20 +112,20 @@ const Body = () => {
           <Select styles={customStyles} placeholder="Size" options={optionsSize}/>
           <Select styles={customStyles} placeholder="Combo" options={optionsCombo}/>
         </div>
-        <div className='flex justify-center space-x-5 h-full items-center md:px-5 pl-5 md:w-auto w-auto mx-4 pr-10 py-2 border-black border rounded-[32px] text-xl'>
+        <div className='flex justify-center focus-within:bg-white hover:bg-white space-x-5 h-full items-center md:px-5 pl-5 md:w-auto w-auto mx-4 pr-10 py-2 border-black border rounded-[32px] text-xl'>
           <label htmlFor='search'>
-            <AiOutlineSearch/>
+            <AiOutlineSearch className='hover:cursor-pointer'/>
           </label>
           <input className='bg-transparent focus:outline-none text-lg w-full' id='search' placeholder='Search..' type="text" />
         </div>
       </div>
 
-      {/* merch */}
-      <motion.div initial="offscreen" whileInView="onscreen" viewport={{once:true, amount:0.1}} className='merch grid justify-center grid-flow-row md:grid-flow-row lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:mx-28 md:mx-10 xl:mx-40 mx-5 gap-10 items-center'>
-        {arr.map((i,idx)=>{return <motion.div id={i} key={i} variants={cardVariants} className={`${i} group hover:scale-105 transition-all merch-items md:max-w-sm flex flex-col justify-center items-center border space-y-2 rounded-3xl p-3 border-black`}>
-          <div className='relative object-cover w-fit object-center'>
-            <img className=' rounded-xl' src={dummyImg} alt="" />
-            <div className='absolute top-1 right-2 flex text-xs space-x-1 rounded-2xl bg-white p-1'><img src={dummyImg2} alt="" /><span>Unisex</span></div>
+      {/* merch mx-5 lg:mx-28 md:mx-10 xl:mx-40 590 787 */ }
+      <motion.div initial="offscreen" whileInView="onscreen" viewport={{once:true, amount:0.1}} className='merch grid justify-center grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-11/12 mx-auto mdlg1:w-9/12 mdlg2:w-7/12 mdlg3:w-1/2 gap-10 items-center'>
+        {arr.map((i,idx)=>{return <motion.div id={i} key={i} variants={cardVariants} className={`${i} hover:shadow-5xl group hover:scale-105 transition-all merch-items md:max-w-sm flex flex-col justify-center items-start border space-y-2 rounded-3xl p-3 border-black`}>
+          <div className='flex justify-center w-full object-cover object-center hover:cursor-pointer'>
+            <div className='relative'><img className=' rounded-xl' src={dummyImg} alt="" />
+            <div className='absolute top-1 right-2 flex text-xs space-x-1 rounded-2xl bg-white p-1'><img src={dummyImg2} alt="" /><span>Unisex</span></div></div>
           </div>
           <div className='m-2'><p className='font-secondary'>{dummyString.slice(0,100)}. <span className='font-bold hover:cursor-pointer' onClick={handleVClick(i,idx)}>view more</span></p></div>
           <div className='flex justify-center items-center p-2 bg-white rounded-xl text-xs space-x-3  place-items-start'><span className='p-0.5 bg-black text-white'><IoMdResize/></span><p>Available Sizes: <span>S, M, L, XL, XX</span></p></div>
