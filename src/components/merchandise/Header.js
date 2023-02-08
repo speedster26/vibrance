@@ -6,10 +6,10 @@ import { motion } from "framer-motion"
 
 const Header = () => {
   return (
-      <div className='flex flex-col bg-[#D7FDFF] min-h-screen md:space-y-10 space-y-5'>
+      <div className='flex flex-col bg-[#D7FDFF] min-h-screen px-2 pb-10 md:space-y-10 space-y-5'>
       {/* Navbar component */}
         <Navbar/>
-        <motion.div initial={{opacity:0,scale:0.5}} animate={{opacity:1,scale:1}} transition={{duration:0.5}} className='flex justify-center mx-3'>
+        <motion.div initial={{opacity:0,scale:0.5}} animate={{opacity:1,scale:1}} transition={{duration:0.5}} className='flex justify-center mx-3 md:mx-16'>
           <img src={merchBanner} alt="merch" />
         </motion.div>
         <Body/>

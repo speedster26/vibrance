@@ -34,8 +34,12 @@ const Body = () => {
       },
       backgroundColor: '#D7FDFF',
       color: '#343D4C',
-      minWidth: '180px',
-      fontFamily: 'fredoka'
+      fontFamily: 'fredoka',
+      '@media (max-width: 375px)': {
+        padding: '6px 8px',
+        fontSize: '12px'
+      },
+      innerHeight: '100%'
       
     }),
     option: (base, state) => ({
@@ -58,12 +62,12 @@ const Body = () => {
     singleValue: (base) => ({
       ...base,
       color: '#343D4C',
-      font: 'fredoka'
+      fontFamily: 'fredoka'
     }),
     placeholder: (base) => ({
       ...base,
       color: '#343D4C',
-      font: 'fredoka'
+      fontFamily: 'fredoka'
     }),
     indicatorSeparator: (base) => ({
       ...base,
@@ -96,12 +100,12 @@ const Body = () => {
   return (
     <div className='flex flex-col space-y-10'>
       {/* filter */}
-      <div className='filters flex md:flex-row flex-col-reverse justify-center md:justify-evenly items-center py-5 md:h-24 md:space-x-52 md:space-y-0 mx-3'>
-        <div className='flex md:space-x-10 space-x-5 mt-5 flex-wrap'>
+      <div className='filters flex md:flex-row flex-col-reverse justify-center lg:justify-evenly items-center py-5 lg:space-x-52 md:space-x-20 md:space-y-0 mx-3'>
+        <div className='flex space-x-5 mt-5 md:mt-0 items-center justify-center'>
           <Select styles={customStyles} placeholder="Size" options={optionsSize}/>
           <Select styles={customStyles} placeholder="Combo" options={optionsCombo}/>
         </div>
-        <div className='flex justify-center space-x-5 h-full items-center md:px-5 pl-5 md:w-auto w-full mx-4 pr-10 py-2 border-black border rounded-[32px] text-xl'>
+        <div className='flex justify-center space-x-5 h-full items-center md:px-5 pl-5 md:w-auto w-auto mx-4 pr-10 py-2 border-black border rounded-[32px] text-xl'>
           <label htmlFor='search'>
             <AiOutlineSearch/>
           </label>
@@ -110,7 +114,7 @@ const Body = () => {
       </div>
 
       {/* merch */}
-      <motion.div initial="offscreen" whileInView="onscreen" viewport={{once:true, amount:0.1}} className='merch grid justify-center grid-flow-row md:grid-flow-row md:grid-cols-4 grid-cols-1 md:mx-40 mx-5 gap-10 items-center'>
+      <motion.div initial="offscreen" whileInView="onscreen" viewport={{once:true, amount:0.1}} className='merch grid justify-center grid-flow-row md:grid-flow-row lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:mx-28 md:mx-10 xl:mx-40 mx-5 gap-10 items-center'>
         {arr.map((i,idx)=>{return <motion.div id={i} key={i} variants={cardVariants} className={`${i} group hover:scale-105 transition-all merch-items md:max-w-sm flex flex-col justify-center items-center border space-y-2 rounded-3xl p-3 border-black`}>
           <div className='relative object-cover w-fit object-center'>
             <img className=' rounded-xl' src={dummyImg} alt="" />
