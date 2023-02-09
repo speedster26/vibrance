@@ -24,8 +24,12 @@ module.exports = {
       screens: {
         'mdlg1': {'min': '425px', 'max': '590px'},
         'mdlg2': {'min': '590px', 'max': '686px'},
-        'mdlg3': {'min': '686px', 'max': '767px'}
+        'mdlg3': {'min': '686px', 'max': '767px'},
+        '3xl': '2000px'
       },
+      borderRadius: {
+        '4xl': '32px',
+      }
     },
   },
   plugins: [
