@@ -126,7 +126,7 @@ const Body = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 1
+        duration: 0.5
       }
     }
   };
@@ -164,10 +164,10 @@ const Body = () => {
         {/*  w-11/12 mdlg1:w-9/12 mdlg2:w-7/12 mdlg3:w-1/2  mx-auto*/}
         <motion.div className='merch grid mb-10 justify-center grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 mx-5 md:w-11/12 md:mx-auto gap-10 items-center'>
           {items.map((item, index) => {
-            return <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.5 }} id={index} key={index} variants={cardVariants} className={`hover:shadow-5xl hover:bg-white group hover:scale-105 transition-all merch-items md:max-w-sm flex flex-col justify-center items-start border space-y-2 rounded-3xl p-3 border-black`}>
+            return <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1 }} id={index} key={index} variants={cardVariants} className={`hover:shadow-5xl hover:bg-white group hover:scale-105 transition-all merch-items md:max-w-sm flex flex-col justify-center items-start border space-y-2 rounded-3xl p-3 border-black`}>
               <div className='flex justify-center w-full object-cover object-center hover:cursor-pointer'>
                 <div className='relative w-full'>
-                  <img className='w-full h-full rounded-xl' src={dummyImg} alt="" />
+                  <img className='w-full h-full rounded-xl' src={item.image? "https://vitvibrance.onrender.com" + item.image:dummyImg} alt={item.title} />
                   <div className='absolute top-1 right-2 w-fit flex justify-center -space-x-1 items-center text-xs rounded-2xl font-semibold bg-white py-1 pl-2 pr-3'>
                     <img src={dummyImg2} alt="" className='scale-75' /><span className='text-xs font-secondary'>Unisex</span>
                   </div>
