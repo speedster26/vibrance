@@ -3,12 +3,14 @@ import Select from 'react-select'
 import { AiOutlineSearch } from 'react-icons/ai';
 import { HiCurrencyRupee } from 'react-icons/hi';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import dummyImg from '../../assets/images/dummy.jpg'
+import altImg from '../../assets/images/Placeholder.png'
 import dummyImg2 from '../../assets/images/unisex.svg'
 import dummyImg3 from '../../assets/images/size.svg'
 import { motion } from "framer-motion"
 import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from '../utils/Spinner';
+import ReactImageFallback from "react-image-fallback";
+
 
 const Body = () => {
 
@@ -50,7 +52,7 @@ const Body = () => {
     { value: 'combo2', label: 'Combo 2' },
     { value: 'combo3', label: 'Combo 3' }
   ]
-  const dummyString = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae enim explicabo cum nam consequuntur saepe provident dolorum eveniet ipsa fugiat tempore, sint harum blanditiis sunt accusantium deleniti commodi numquam exercitationem.';
+  // const dummyString = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae enim explicabo cum nam consequuntur saepe provident dolorum eveniet ipsa fugiat tempore, sint harum blanditiis sunt accusantium deleniti commodi numquam exercitationem.';
   const customStyles = {
     control: (base, state) => ({
       ...base,
@@ -115,7 +117,7 @@ const Body = () => {
       color: '#343D4C'
     })
   }
-  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  // const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 
   const cardVariants = {
@@ -129,11 +131,6 @@ const Body = () => {
         duration: 0.5
       }
     }
-  };
-  const override = {
-    display: "block",
-    margin: "0 auto",
-    borderColor: "red",
   };
 
   return (
@@ -167,7 +164,9 @@ const Body = () => {
             return <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1 }} id={index} key={index} variants={cardVariants} className={`hover:shadow-5xl hover:bg-white group hover:scale-105 transition-all merch-items md:max-w-sm flex flex-col justify-center items-start border space-y-2 rounded-3xl p-3 border-black`}>
               <div className='flex justify-center w-full object-cover object-center hover:cursor-pointer'>
                 <div className='relative w-full'>
-                  <img className='w-full h-full rounded-xl' src={item.image? "https://vitvibrance.onrender.com" + item.image:dummyImg} alt={item.title} />
+                <ReactImageFallback src={item.image? "https://vitvibrance.onrender.com" + item.image:altImg} fallbackImage={altImg} initialImage={altImg} alt={item.title} className='w-full h-full rounded-xl'/>
+                  {/* <Suspense><MyImageComponent/></Suspense> */}
+                  {/* <img className='w-full h-full rounded-xl' src={item.image? "https://vitvibrance.onrender.com" + item.image:altImg} alt={item.title} /> */}
                   <div className='absolute top-1 right-2 w-fit flex justify-center -space-x-1 items-center text-xs rounded-2xl font-semibold bg-white py-1 pl-2 pr-3'>
                     <img src={dummyImg2} alt="" className='scale-75' /><span className='text-xs font-secondary'>Unisex</span>
                   </div>
