@@ -4,12 +4,12 @@
 @font-face {
     font-family: "NaughtyMonster";
     src: local("NaughtyMonster"),
-     url("./fonts/naughty-monster/NaughtyMonster.ttf") format("truetype");
+     url("./assets/fonts/naughty-monster/NaughtyMonster.ttf") format("truetype");
     font-weight: normal;
 }
 @font-face {
     font-family: "Fredoka";
     src: local("Fredoka"),
-     url("./fonts/fredoka/Fredoka.ttf") format("truetype");
+     url("./assets/fonts/fredoka/Fredoka.ttf") format("truetype");
     font-weight: normal;
 }
